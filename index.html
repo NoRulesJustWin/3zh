@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+  .video-wrap { position: fixed; inset: 0; overflow: hidden; }
+  .video-wrap iframe {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100vw; height: 56.25vw; /* نسبة 16:9 */
+    min-height: 100vh; min-width: 177.77vh; /* لملء كامل الشاشة */
+    transform: translate(-50%, -50%);
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="video-wrap">
+  <iframe 
+    src="https://www.youtube.com/embed/bY38-mtTUg4?autoplay=1&mute=0&controls=0&loop=1&playlist=bY38-mtTUg4" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+</body>
+</html>
