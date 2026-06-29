@@ -3,54 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Player</title>
+<title>Audio & Image Player</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  
   body {
-    background: #000;
+    /* إعداد الصورة لتكون خلفية تملأ الشاشة بالكامل */
+    background-image: url('https://e.top4top.io/p_38328bdnj1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
+    
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  .video-wrap { position: fixed; inset: 0; overflow: hidden; z-index: 1; }
-  .video-wrap iframe {
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 100vw; height: 56.25vw; /* نسبة 16:9 */
-    min-height: 100vh; min-width: 177.77vh; /* لملء كامل الشاشة */
-    transform: translate(-50%, -50%);
-    border: none;
+
+  /* إخفاء مشغل الفيديو خارج الشاشة ليعمل كصوت فقط */
+  .audio-only-wrap { 
+    position: absolute; 
+    top: -9999px; 
+    left: -9999px; 
+    width: 1px; 
+    height: 1px; 
+    opacity: 0;
+    pointer-events: none; 
   }
-  
-  /* تنسيق النص ليظهر فوق الفيديو */
+
+  /* تنسيق النص ليظهر فوق الصورة */
   .overlay-message {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* لضمان ظهوره فوق الفيديو */
+    z-index: 2;
     color: white;
-    font-size: 3vw; /* حجم خط متجاوب */
+    font-size: 3vw;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), -2px -2px 15px rgba(0, 0, 0, 0.9);
-    pointer-events: none; /* حتى لا يعيق النقر على الفيديو */
-    direction: rtl; /* اتجاه النص من اليمين لليسار */
+    /* ظل قوي ليظل النص مقروءاً حتى لو كانت الصورة فاتحة */
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1), -3px -3px 15px rgba(0, 0, 0, 1);
+    pointer-events: none;
+    direction: rtl;
+    width: 90%; /* لمنع خروج النص من الشاشة */
   }
 
-  /* تكبير الخط للشاشات الصغيرة */
+  /* تكبير الخط للشاشات الصغيرة كالجوالات */
   @media (max-width: 768px) {
     .overlay-message {
-      font-size: 6vw;
+      font-size: 7vw;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="video-wrap">
+<!-- مشغل اليوتيوب مخفي (الصوت فقط) -->
+<div class="audio-only-wrap">
   <iframe 
+    width="10" height="10"
     src="https://www.youtube.com/embed/bY38-mtTUg4?autoplay=1&mute=0&controls=0&loop=1&playlist=bY38-mtTUg4" 
     allow="autoplay; encrypted-media" 
     allowfullscreen>
