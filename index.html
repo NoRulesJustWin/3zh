@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audio & Image Player</title>
+<title>Audio & Image Player (1920x1080)</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
   body {
-    /* إعداد الصورة لتكون خلفية تملأ الشاشة بالكامل */
+    /* تثبيت الأبعاد لتكون 1920 في 1080 بالضبط */
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    overflow: hidden;
+    
+    /* إعدادات الصورة */
     background-image: url('https://e.top4top.io/p_38328bdnj1.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    /* 100% لكي تتمدد الصورة وتغطي مساحة الـ 1920x1080 بالكامل */
+    background-size: 100% 100%; 
     background-color: #000;
     
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
@@ -33,7 +36,7 @@
     pointer-events: none; 
   }
 
-  /* تنسيق النص ليظهر فوق الصورة */
+  /* تنسيق النص ليظهر في منتصف الشاشة ذات دقة 1920x1080 */
   .overlay-message {
     position: fixed;
     top: 50%;
@@ -41,22 +44,16 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    font-size: 3vw;
+    font-size: 60px; /* استخدام حجم خط ثابت يتناسب مع الشاشة الكبيرة */
     font-weight: bold;
     text-align: center;
-    /* ظل قوي ليظل النص مقروءاً حتى لو كانت الصورة فاتحة */
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1), -3px -3px 15px rgba(0, 0, 0, 1);
+    /* ظل قوي للنص */
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), -4px -4px 15px rgba(0, 0, 0, 1);
     pointer-events: none;
     direction: rtl;
-    width: 90%; /* لمنع خروج النص من الشاشة */
+    width: 1800px; /* لتجنب تلامس النص مع الحواف */
   }
 
-  /* تكبير الخط للشاشات الصغيرة كالجوالات */
-  @media (max-width: 768px) {
-    .overlay-message {
-      font-size: 7vw;
-    }
-  }
 </style>
 </head>
 <body>
@@ -71,7 +68,7 @@
   </iframe>
 </div>
 
-<!-- الجملة المضافة -->
+<!-- الجملة -->
 <div class="overlay-message">
   عصابة gay بقيادة الحبوش يرسلون تحياتهم
 </div>
