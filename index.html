@@ -14,11 +14,11 @@
     margin: 0;
     overflow: hidden;
     
-    /* إعدادات الصورة */
+    /* الصورة الجديدة */
     background-image: url('https://g.top4top.io/p_3832wmaim1.png');
     background-position: center;
     background-repeat: no-repeat;
-    /* 100% لكي تتمدد الصورة وتغطي مساحة الـ 1920x1080 بالكامل */
+    /* لتتمدد الصورة وتغطي مساحة الـ 1920x1080 بالكامل */
     background-size: 100% 100%; 
     background-color: #000;
     
@@ -44,31 +44,32 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
-    font-size: 60px; /* استخدام حجم خط ثابت يتناسب مع الشاشة الكبيرة */
+    font-size: 60px; /* حجم الخط */
     font-weight: bold;
     text-align: center;
-    /* ظل قوي للنص */
+    /* ظل قوي للنص ليكون مقروءاً بوضوح */
     text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), -4px -4px 15px rgba(0, 0, 0, 1);
     pointer-events: none;
     direction: rtl;
-    width: 1800px; /* لتجنب تلامس النص مع الحواف */
+    width: 1800px;
   }
 
 </style>
 </head>
 <body>
 
-<!-- مشغل اليوتيوب مخفي (الصوت فقط) -->
+<!-- مشغل اليوتيوب مخفي (الصوت الجديد) -->
 <div class="audio-only-wrap">
   <iframe 
     width="10" height="10"
-    src="https://youtu.be/UD_ZpPmlqaE?si=pBYu1u3ieX-BQKj-" 
+    /* تم استخراج معرف المقطع (UD_ZpPmlqaE) وتضمينه هنا ليعمل تلقائياً ويتكرر */
+    src="https://www.youtube.com/embed/UD_ZpPmlqaE?autoplay=1&mute=0&controls=0&loop=1&playlist=UD_ZpPmlqaE" 
     allow="autoplay; encrypted-media" 
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- الجملة -->
+<!-- الجملة المضافة -->
 <div class="overlay-message">
 يعطيكم العافيه انا بنام بجيكم العصر و الليل 
 </div>
